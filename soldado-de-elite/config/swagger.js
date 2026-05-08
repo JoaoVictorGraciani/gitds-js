@@ -6,7 +6,7 @@ const options = {
         info: {
             title: "My API",
             version: "1.0.0",
-            description: " Documentação da API de Usuarios",
+            description: " Documentação da API de Soldados",
         },
         servers: [
             {
@@ -14,7 +14,7 @@ const options = {
             }
         ],
     },
-    apis: ["./routes/*.ts"],
+    apis: ["./routes/*.js"],
 }
 
 export const swaggerSpec = swaggerJSDoc(options);
