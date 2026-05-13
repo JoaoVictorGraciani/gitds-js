@@ -6,7 +6,6 @@ import { connectDB, sequelize } from './config/database.js';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './config/swagger.js';
 
-
 const app = express();
 
 app.use(express.json());
