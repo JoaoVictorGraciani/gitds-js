@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import express from 'express';
 import userRoutes from './routes/userRoutes.js';
+import authRoutes from './routes/authRoutes.js';
+
 import { connectDB, sequelize } from './config/database.js';
 
 import swaggerUi from 'swagger-ui-express';
@@ -16,6 +18,10 @@ app.use("/api", userRoutes); //http://localhost:3000/api/user
 
 // rota swagger
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+// rota auth
+app.use("/auth", authRoutes);
+
 
 const start = async () => {
     await connectDB();

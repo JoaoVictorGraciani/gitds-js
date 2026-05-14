@@ -6,6 +6,8 @@ import {
     updateUser,
     deleteUser
 } from "../controllers/userController.js";
+import { authmiddleware } from "../middleware/authmiddleware.js";
+
 
 const router = Router();
 
@@ -34,7 +36,7 @@ const router = Router();
  *       500:
 *          description: Erro ao listar usuários
  */
-router.post("/user", createUser)
+router.post("/user", authmiddleware, createUser)
 
 /**
  * @swagger
@@ -48,7 +50,7 @@ router.post("/user", createUser)
  *       500:
  *         description: Erro ao listar usuários
  */
-router.get("/user", getUsers)
+router.get("/user", authmiddleware, getUsers)
 
 /**
  * @swagger
